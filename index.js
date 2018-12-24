@@ -28,7 +28,8 @@ var port = process.env.PORT || 8081;
 // Send message for default URL
 app.get('/', async (req, res) =>{ 
     let data = await sai('data');
-    res.send({data :data.find({}).toArray()})
+     result = await data.find({}).toArray();
+    res.send({data :result});
 });
 
 // Launch app to listen to specified port
